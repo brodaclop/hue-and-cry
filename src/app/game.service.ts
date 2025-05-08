@@ -38,10 +38,8 @@ export class GameService {
     return score;
   }
 
-  private randomSeed: string = 'hello';
-
-  private readonly randomBoard = (): GameBoard => {
-    const rnd = seedrandom(this.randomSeed);
+  private readonly randomBoard = (seed: string): GameBoard => {
+    const rnd = seedrandom(seed);
     const ret = Array(16).fill(-1) as GameBoard;
     ret.forEach((_: number, idx: number) => {
       let n = Math.floor(rnd() * 72.0) * 5;
@@ -54,7 +52,7 @@ export class GameService {
     return ret;
   }
 
-  private readonly board = signal<GameBoard>(this.randomBoard());
+  private readonly board = signal<GameBoard>(this.randomBoard('hello, world'));
 
   constructor() { }
 
@@ -63,8 +61,10 @@ export class GameService {
     return this.calculateScore(board);
   });
 
-  reset = () => {
-    this.board.set(this.randomBoard());
+
+
+  reset = (seed: string) => {
+    this.board.set(this.randomBoard(seed));
   }
 
   swap = (source: number, target: number) => this.board.update(board => {

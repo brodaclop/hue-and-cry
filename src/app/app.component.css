@@ -11,6 +11,19 @@
     font-size: calc(var(--scale) / 20);
 }
 
+.score p {
+    margin: 0;
+}
+
+.score input,
+.score button {
+    height: calc(var(--scale) / 20);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: text-bottom;
+}
+
 main {
     display: flex;
     flex-direction: row;

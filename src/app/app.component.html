@@ -1,8 +1,17 @@
 <main>
   <app-board [board]="gameService.getBoard()()" />
-  <div class="score">Score: {{gameService.score() | number: '0.4-4'}} (<span
-      [class]="{positive: dragService.projectedDelta()() > 0, negative: dragService.projectedDelta()() < 0}">{{dragService.projectedDelta()()
-      | abs | number: '0.4-4'}}</span>)</div>
+  <div class="score">
+    <p><strong>Score: </strong>{{gameService.score() | number: '0.4-4'}}&nbsp;(<span
+        [class]="{positive: dragService.projectedDelta()() > 0, negative: dragService.projectedDelta()() < 0}">{{dragService.projectedDelta()()
+        | abs | number: '0.4-4'}}</span>)
+    </p>
+    <p>
+      <label>
+        <strong>Board: </strong>
+        <input type="text" [(ngModel)]="seed" /><button (click)="gameService.reset(seed())">Reset</button>
+      </label>
+    </p>
+  </div>
 </main>
 
 
