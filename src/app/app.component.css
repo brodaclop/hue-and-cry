@@ -1,0 +1,26 @@
+.score .positive {
+    color: red;
+}
+
+.score .negative {
+    color: green;
+}
+
+.score {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+@media (orientation: portrait) {
+    main {
+        flex-direction: column;
+    }
+}

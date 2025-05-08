@@ -1,0 +1,6 @@
+<div draggable="true" [style.background-color]="'hsl(' + hue + ', 100%, 80%)'" class="tile"
+    (dragstart)="dragService.start(idx)" (drop)="dragService.finish(idx)" (dragenter)="dragService.over($event, idx)"
+    (dragover)="dragService.over($event, idx)" (dragleave)="dragService.leave()"
+    [class.dragSource]="dragService.getDragged()() === idx" [class.dragTarget]="dragService.getOver()() === idx">
+
+</div>

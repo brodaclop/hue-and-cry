@@ -1,0 +1,13 @@
+.tile {
+    width: calc((min(100dvh, 100dvw) - 3em) / 4);
+    height: calc((min(100dvh, 100dvw) - 3em) / 4);
+    border: calc((min(100dvh, 100dvw) - 3em) / 300) solid black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.tile.dragSource,
+.tile.dragTarget {
+    border: calc((min(100dvh, 100dvw) - 3em) / 100) outset black;
+}
