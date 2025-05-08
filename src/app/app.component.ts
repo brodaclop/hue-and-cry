@@ -1,5 +1,5 @@
 import { Component, WritableSignal, signal } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { BoardComponent } from './board/board.component';
 import { GameService } from './game.service';
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
 
-  imports: [RouterOutlet, BoardComponent, DecimalPipe, AbsPipe, FormsModule],
+  imports: [RouterOutlet, BoardComponent, DecimalPipe, AbsPipe, FormsModule, NgIf],
   providers: [DecimalPipe, AbsPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

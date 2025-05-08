@@ -1,9 +1,9 @@
 <main>
   <app-board [board]="gameService.getBoard()()" />
   <div class="score">
-    <p><strong>Score: </strong>{{gameService.score() | number: '0.4-4'}}&nbsp;(<span
-        [class]="{positive: dragService.projectedDelta()() > 0, negative: dragService.projectedDelta()() < 0}">{{dragService.projectedDelta()()
-        | abs | number: '0.4-4'}}</span>)
+    <p><strong>Score: </strong>{{gameService.score() | number: '0.4-4'}}&nbsp;<span *ngIf="dragService.isActive()()"
+        [class]="{positive: dragService.projectedDelta()() > 0, negative: dragService.projectedDelta()() < 0}">({{dragService.projectedDelta()()
+        | abs | number: '0.4-4'}})</span>
     </p>
     <p>
       <label>
