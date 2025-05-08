@@ -8,6 +8,7 @@
 
 .score {
     text-align: center;
+    font-size: calc(var(--scale) / 20);
 }
 
 main {

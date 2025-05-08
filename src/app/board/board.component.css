@@ -1,9 +1,9 @@
 .board {
     display: grid;
     grid: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
-    width: calc(min(100dvh, 100dvw) - 3em);
-    height: calc(min(100dvh, 100dvw) - 3em);
+    width: var(--scale);
+    height: var(--scale);
     flex-wrap: wrap;
-    border: calc((min(100dvh, 100dvw) - 3em) / 100) inset black;
+    border: calc(var(--scale) / 100) inset black;
     box-sizing: content-box;
 }
